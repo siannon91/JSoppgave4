@@ -60,6 +60,7 @@ h2 {
   font-size: 20px;
   text-align: center;
   padding: 5px;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .movie-image { 
@@ -68,3 +69,9 @@ h2 {
   border-radius: 5px; 
   margin-bottom: 10px; 
 } 
+
+.movie-sjanger, 
+.movie-år { 
+  font-size: 14px; 
+  margin: 6px 0;
+}

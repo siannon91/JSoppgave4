@@ -28,7 +28,18 @@ for (let movie of movies) {
   movieImage.src = movie.Bilde;
   movieImage.alt = movie.alt;
 
-  card.append(tittel, movieImage);
+  const movieSjanger = document.createElement("p"); 
+  movieSjanger.textContent = movie.Sjanger; 
+  movieSjanger.classList.add("movie-sjanger"); 
+
+  const movieÅr = document.createElement("p"); 
+  movieÅr.textContent = movie.Utgivelserår; 
+  movieÅr.classList.add("movie-år"); 
+
+
+
+
+  card.append(tittel, movieImage, movieSjanger, movieÅr);
 
   movieContainer.append(card);
 }
