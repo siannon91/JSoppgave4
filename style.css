@@ -34,3 +34,11 @@ h2 {
     font-family: 'Times New Roman', Times, serif;
     padding: 20px;
 }
+
+#movie-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+}
