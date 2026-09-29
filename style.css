@@ -65,7 +65,7 @@ h2 {
 
 .movie-image { 
   width: 100%; 
-  height: auto; 
+  height: 260px; 
   border-radius: 5px; 
   margin-bottom: 10px; 
 } 

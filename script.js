@@ -11,6 +11,16 @@ const movies = [
     Lengde: "2 t. 13 min.", 
     Språk: "Engelsk", 
   },
+
+  { 
+    Tittel: "Lord of the Rings",
+    Bilde: "./images/Lord of the Rings.jpg",
+    alt: "a Lord of the rings movie poster", 
+    Sjanger: "Episk fantasy / Eventyr / Action", 
+    Utgivelserår: "2001", 
+    Lengde: "2 t. 58 min.", 
+    Språk: "Engelsk", 
+  },
 ];
 
 
