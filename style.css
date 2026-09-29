@@ -71,7 +71,10 @@ h2 {
 } 
 
 .movie-sjanger, 
-.movie-år { 
+.movie-år,
+.movie-lengde,
+.movie-språk { 
   font-size: 14px; 
   margin: 6px 0;
+  font-family: 'Times New Roman', Times, serif;
 }

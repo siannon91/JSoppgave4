@@ -34,12 +34,20 @@ for (let movie of movies) {
 
   const movieÅr = document.createElement("p"); 
   movieÅr.textContent = movie.Utgivelserår; 
-  movieÅr.classList.add("movie-år"); 
+  movieÅr.classList.add("movie-år");
+
+  const movieLengde = document.createElement("p"); 
+  movieLengde.textContent = movie.Lengde; 
+  movieLengde.classList.add("movie-lengde");
+
+  const movieSpråk = document.createElement("p"); 
+  movieSpråk.textContent = movie.Språk; 
+  movieSpråk.classList.add("movie-språk");
 
 
 
 
-  card.append(tittel, movieImage, movieSjanger, movieÅr);
+  card.append(tittel, movieImage, movieSjanger, movieÅr, movieLengde, movieSpråk);
 
   movieContainer.append(card);
 }
