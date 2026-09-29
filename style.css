@@ -27,3 +27,10 @@ header p {
     font-size: 2rem;
     font-family: 'Times New Roman', Times, serif;
 }
+
+h2 {
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 20px;
+}
