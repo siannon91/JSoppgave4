@@ -42,3 +42,29 @@ h2 {
   gap: 20px;
   padding: 30px;
 }
+
+.movie-card { 
+  border: 1px solid #ddd; 
+  padding: 15px; 
+  width: 200px; 
+  border-radius: 10px; 
+  background-color: #fff; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.movie-tittel {
+  margin: 0; 
+  font-size: 20px;
+  text-align: center;
+  padding: 5px;
+}
+
+.movie-image { 
+  width: 100%; 
+  height: auto; 
+  border-radius: 5px; 
+  margin-bottom: 10px; 
+} 
