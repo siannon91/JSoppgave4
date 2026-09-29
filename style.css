@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    text-align: center;
+    background-image: url(./images/copertina.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    width: 100%;
+    max-width: 1700px;
+    height: 400px;
+
+}
+
+header h1 {
+    padding: 100px 0 100px 0;
+    color: black;
+    font-size: 5rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+header p {
+    font-size: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+}
