@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tilfeldig Filmvelger</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>🎬 Tilfeldig Filmvelger</h1>
+        <p>Usikker på hva du skal se i kveld? La tilfeldigheten bestemme!</p>
+    </header>
+
+    <main>
+        <!-- Kontrollknapper (Control buttons) -->
+        <section class="controls-section">
+            <button id="random-btn" onclick="velgTilfeldigFilm()">🎲 Velg en tilfeldig film</button>
+            <button id="show-all-btn" onclick="visAlleFilm()">📜 Vis alle filmer</button>
+        </section>
+
+        <!-- Seksjon for vinnerfilm / valgt film (Section for selected winner movie) -->
+        <section id="winner-section" class="winner-box hidden">
+            <h2>🎉 Kveldens film er:</h2>
+            <div id="winner-card">
+                <!-- Fylles ut dynamisk med JavaScript (Filled dynamically by JS) -->
+            </div>
+        </section>
+
+        <!-- Skjema for å legge til nye filmer (Form to add new movies) -->
+        <section class="form-section">
+            <h2>➕ Legg til en ny film</h2>
+            <form id="add-movie-form" onsubmit="leggTilNyFilm(event)">
+                <input type="text" id="input-title" placeholder="Filmtittel" required>
+                <input type="text" id="input-genre" placeholder="Sjanger" required>
+                <input type="text" id="input-image" placeholder="Sett inn bilde-URL her" required>
+                <input type="text" id="input-gif" placeholder="Sett inn GIF-URL her" required>
+                <button type="submit">Legg til film</button>
+            </form>
+        </section>
+
+        <!-- Beholder for alle filmkort (Container for all movie cards) -->
+        <section>
+            <h2>📚 Alle filmer i samlingen</h2>
+            <div id="movie-container">
+                <!-- Filmkort genereres her fra JavaScript (Movie cards are generated here) -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Kobler til JavaScript-filen (Links the JavaScript file) -->
+
+</body>
+</html>
