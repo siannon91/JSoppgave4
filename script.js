@@ -1,6 +1,9 @@
 const movieContainer = document.querySelector("#movie-container"); 
 const randomButton = document.querySelector("#random-button");
 const selectedMovieContainer = document.querySelector("#selected-movie-container");
+const titleInput = document.querySelector("#title-input");
+const addButton = document.querySelector("#add-button");
+
 
 
 const movies = [ 
@@ -116,3 +119,25 @@ function getRandomMovie() {
 
 randomButton.addEventListener("click", getRandomMovie);
 
+
+function addMovie() {
+    const userTitle = titleInput.value.trim();
+    if (userTitle === "") {
+        alert("Vennligst skriv inn en filmtittel!");
+        return;
+    }
+    const newMovie = {
+        Tittel: userTitle,
+        Bilde: "./images/cinema.jpg"
+    };
+
+    movies.push(newMovie);
+
+    const newCard = createMovieCard(newMovie);
+    movieContainer.append(newCard);
+
+    titleInput.value = "";
+
+}
+
+addButton.addEventListener("click", addMovie);
