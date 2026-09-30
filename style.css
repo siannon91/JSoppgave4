@@ -54,6 +54,7 @@ h2 {
     background-color: #fff; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
+
 }
 
 .movie-card:hover {
@@ -164,4 +165,21 @@ h2 {
 
 .delete-button:hover {
     background-color: rgb(44, 44, 44);
+}
+
+#reset-button {
+    margin: 45px;
+    padding: 5px 10px;
+    font-size: 0.75rem;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}
+
+#reset-button:hover {
+    background-color: #333;
 }

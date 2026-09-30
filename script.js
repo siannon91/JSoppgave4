@@ -3,6 +3,7 @@ const randomButton = document.querySelector("#random-button");
 const selectedMovieContainer = document.querySelector("#selected-movie-container");
 const titleInput = document.querySelector("#title-input");
 const addButton = document.querySelector("#add-button");
+const resetButton = document.querySelector("#reset-button");
 
 
 
@@ -41,7 +42,7 @@ const movies = [
     Tittel: "Hokus Pokus",
     Bilde: "./images/Hocus Pocus.jpg",
     alt: "Hocus Pocus movie poster", 
-    Sjanger: "Kommedie / Fantasie", 
+    Sjanger: "Kommedie / Fantasie / Halloween", 
     Utgivelserår: "1993", 
     Lengde: "1 t. 36 min.", 
     Språk: "Engelsk", 
@@ -58,6 +59,7 @@ const movies = [
   },
 ];
 
+const initialMovies = [ ...movies ];
 
 function createMovieCard(movie, isDetailed = true) { 
 
@@ -131,8 +133,6 @@ function getRandomMovie() {
     randomButton.textContent = "Velg en annen film!";
 }
 
-randomButton.addEventListener("click", getRandomMovie);
-
 
 function addMovie() {
     const userTitle = titleInput.value.trim();
@@ -154,4 +154,23 @@ function addMovie() {
 
 }
 
+
+function resetCollection() {
+    movieContainer.innerHTML = "";
+    selectedMovieContainer.innerHTML = "";
+
+    randomButton.textContent = "Velg en tilfeldig film!";
+
+    movies.length = 0;
+    movies.push(...initialMovies);
+
+    for (let movie of movies) {
+        const card = createMovieCard(movie);
+        movieContainer.append(card);
+    }
+
+}
+
+randomButton.addEventListener("click", getRandomMovie);
 addButton.addEventListener("click", addMovie);
+resetButton.addEventListener("click", resetCollection);
