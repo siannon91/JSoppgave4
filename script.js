@@ -21,6 +21,36 @@ const movies = [
     Lengde: "2 t. 58 min.", 
     Språk: "Engelsk", 
   },
+
+  { 
+    Tittel: "Titanic",
+    Bilde: "./images/Titanic.jpg",
+    alt: "Titanic movie poster", 
+    Sjanger: "Romantisk drama / Katastrofe, Thriller", 
+    Utgivelserår: "1997", 
+    Lengde: "3 t. 14 min.", 
+    Språk: "Engelsk", 
+  },
+
+  { 
+    Tittel: "Hokus Pokus",
+    Bilde: "./images/Hocus Pocus.jpg",
+    alt: "Hocus Pocus movie poster", 
+    Sjanger: "Kommedie / Fantasie", 
+    Utgivelserår: "1993", 
+    Lengde: "1 t. 36 min.", 
+    Språk: "Engelsk", 
+  },
+
+  { 
+    Tittel: "Pulp Fiction",
+    Bilde: "./images/Pulp Fiction.jpg",
+    alt: "Pulp Fiction movie poster", 
+    Sjanger: "Gangsterfilm / Svart Komedie / Actionthriller", 
+    Utgivelserår: "1994", 
+    Lengde: "2 t. 34 min.", 
+    Språk: "Engelsk", 
+  },
 ];
 
 
