@@ -1,4 +1,6 @@
 const movieContainer = document.querySelector("#movie-container"); 
+const randomButton = document.querySelector("#random-button");
+const selectedMovieContainer = document.querySelector("#selected-movie-container");
 
 
 const movies = [ 
@@ -56,38 +58,50 @@ const movies = [
 
 for (let movie of movies) { 
 
-  const card = document.createElement("div"); 
-  card.classList.add("movie-card"); 
+    const card = document.createElement("div"); 
+    card.classList.add("movie-card"); 
 
-  const tittel = document.createElement("h3");
-  tittel.classList.add("movie-tittel");
-  tittel.textContent = movie.Tittel;
+    const tittel = document.createElement("h3");
+    tittel.classList.add("movie-tittel");
+    tittel.textContent = movie.Tittel;
 
-  const movieImage = document.createElement("img");
-  movieImage.classList.add("movie-image");
-  movieImage.src = movie.Bilde;
-  movieImage.alt = movie.alt;
+    const movieImage = document.createElement("img");
+    movieImage.classList.add("movie-image");
+    movieImage.src = movie.Bilde;
+    movieImage.alt = movie.alt;
 
-  const movieSjanger = document.createElement("p"); 
-  movieSjanger.textContent = movie.Sjanger; 
-  movieSjanger.classList.add("movie-sjanger"); 
+    const movieSjanger = document.createElement("p"); 
+    movieSjanger.textContent = movie.Sjanger; 
+    movieSjanger.classList.add("movie-sjanger"); 
 
-  const movieÅr = document.createElement("p"); 
-  movieÅr.textContent = movie.Utgivelserår; 
-  movieÅr.classList.add("movie-år");
+    const movieÅr = document.createElement("p"); 
+    movieÅr.textContent = movie.Utgivelserår; 
+    movieÅr.classList.add("movie-år");
 
-  const movieLengde = document.createElement("p"); 
-  movieLengde.textContent = movie.Lengde; 
-  movieLengde.classList.add("movie-lengde");
+    const movieLengde = document.createElement("p"); 
+    movieLengde.textContent = movie.Lengde; 
+    movieLengde.classList.add("movie-lengde");
 
-  const movieSpråk = document.createElement("p"); 
-  movieSpråk.textContent = movie.Språk; 
-  movieSpråk.classList.add("movie-språk");
+    const movieSpråk = document.createElement("p"); 
+    movieSpråk.textContent = movie.Språk; 
+    movieSpråk.classList.add("movie-språk");
 
+    card.append(tittel, movieImage, movieSjanger, movieÅr, movieLengde, movieSpråk);
 
-
-
-  card.append(tittel, movieImage, movieSjanger, movieÅr, movieLengde, movieSpråk);
-
-  movieContainer.append(card);
+    movieContainer.append(card);
 }
+
+
+
+function getRandomMovie() {
+    selectedMovieContainer.innerHTML = "";
+
+    const randomIndex = Math.floor(Math.random() * movies.length);
+    const selectedMovie = movies[randomIndex];
+
+    const randomCard = createMovieCard(selectedMovie);
+    selectedMovieContainer.append(randomCard);
+}
+
+randomButton.addEventListener("click", getRandomMovie);
+
