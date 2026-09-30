@@ -56,7 +56,7 @@ const movies = [
 ];
 
 
-function createMovieCard(movie) { 
+function createMovieCard(movie, isDetailed = true) { 
 
     const card = document.createElement("div"); 
     card.classList.add("movie-card"); 
@@ -69,6 +69,11 @@ function createMovieCard(movie) {
     movieImage.classList.add("movie-image");
     movieImage.src = movie.Bilde;
     movieImage.alt = movie.alt;
+
+    if (!isDetailed) {
+        card.append(tittel, movieImage);
+        return card;
+    }
 
     const movieSjanger = document.createElement("p"); 
     movieSjanger.textContent = movie.Sjanger; 
@@ -103,8 +108,10 @@ function getRandomMovie() {
     const randomIndex = Math.floor(Math.random() * movies.length);
     const selectedMovie = movies[randomIndex];
 
-    const randomCard = createMovieCard(selectedMovie);
+    const randomCard = createMovieCard(selectedMovie, false);
     selectedMovieContainer.append(randomCard);
+
+    randomButton.textContent = "Velg en annen film!";
 }
 
 randomButton.addEventListener("click", getRandomMovie);
