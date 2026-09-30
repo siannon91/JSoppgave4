@@ -113,3 +113,37 @@ h2 {
   border: 3px solid #e5a709;
   box-shadow: 0 4px 15px rgb(196, 134, 2);
 }
+
+#add-movie-section {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.add-own-movie {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+#title-input {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 250px;
+}
+
+#add-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#add-button:hover {
+    background-color: rgb(44, 44, 44);
+}
