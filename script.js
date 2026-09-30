@@ -59,8 +59,9 @@ const movies = [
   },
 ];
 
-const initialMovies = [ ...movies ];
+const initialMovies = [...movies];
 
+// Oppretter beholderen for filmkortet
 function createMovieCard(movie, isDetailed = true) { 
 
     const card = document.createElement("div"); 
@@ -75,6 +76,7 @@ function createMovieCard(movie, isDetailed = true) {
     movieImage.src = movie.Bilde;
     movieImage.alt = movie.alt;
 
+    // Hvis kortet brukes i tilfeldig-seksjonen, vis kun tittel og bilde
     if (!isDetailed) {
         card.append(tittel, movieImage);
         return card;
@@ -96,12 +98,16 @@ function createMovieCard(movie, isDetailed = true) {
     movieSpråk.textContent = movie.Språk; 
     movieSpråk.classList.add("movie-språk");
 
+    // Knapp for å slette filmen
     const deleteButton = document.createElement("button");
     deleteButton.textContent = "Slett";
     deleteButton.classList.add("delete-button");
 
+    // Fjerner fra DOM og oppdaterer array
     deleteButton.addEventListener("click", () => {
         card.remove();
+
+        // Søker gjennom array for å fjerne filmen fra datastrukture
         for (let i = 0; i < movies.length; i++) {
         if (movies[i].Tittel === movie.Tittel) {
             movies.splice(i, 1);
@@ -110,6 +116,7 @@ function createMovieCard(movie, isDetailed = true) {
       }
     });
 
+    // Tilsetter alle elementene på kortet
     card.append(tittel, movieImage, movieSjanger, movieÅr, movieLengde, movieSpråk, deleteButton);
 
     return card;
@@ -120,10 +127,11 @@ for (let movie of movies) {
     movieContainer.append(card);
 }
 
-
+// Funksjon for å velge og vise en tilfeldig film fra array
 function getRandomMovie() {
     selectedMovieContainer.innerHTML = "";
 
+    // Genererer en tilfeldig indeks basert på gjeldende antall filmer
     const randomIndex = Math.floor(Math.random() * movies.length);
     const selectedMovie = movies[randomIndex];
 
@@ -134,15 +142,20 @@ function getRandomMovie() {
 }
 
 
+// Funksjon for å tilsette en ny film skrevet inn av brukeren.
 function addMovie() {
     const userTitle = titleInput.value.trim();
+    // Sjekker at input-feltet ikke er tomt
     if (userTitle === "") {
         alert("Vennligst skriv inn en filmtittel!");
         return;
     }
+
+    // Oppretter et nytt filmokort
     const newMovie = {
         Tittel: userTitle,
-        Bilde: "./images/cinema.jpg"
+        Bilde: "./images/cinema.jpg",
+        alt: "ciak and pop corn with yellow background",
     };
 
     movies.push(newMovie);
@@ -150,20 +163,24 @@ function addMovie() {
     const newCard = createMovieCard(newMovie);
     movieContainer.append(newCard);
 
+    // Tømmer input-feltet
     titleInput.value = "";
 
 }
 
-
+// Funksjon for å tilbakestille film samlingen
 function resetCollection() {
+    // Sletter eksisterende elementer fra DOM
     movieContainer.innerHTML = "";
     selectedMovieContainer.innerHTML = "";
 
     randomButton.textContent = "Velg en tilfeldig film!";
 
+    // Nullstiller arrayet og fyller det på nytt med startfilmene
     movies.length = 0;
     movies.push(...initialMovies);
 
+    // Tegner alle filmkort på nytt
     for (let movie of movies) {
         const card = createMovieCard(movie);
         movieContainer.append(card);
