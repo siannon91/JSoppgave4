@@ -108,7 +108,7 @@ function createMovieCard(movie, isDetailed = true) {
       }
     });
 
-    card.append(tittel, movieImage, movieSjanger, movieÅr, movieLengde, movieSpråk);
+    card.append(tittel, movieImage, movieSjanger, movieÅr, movieLengde, movieSpråk, deleteButton);
 
     return card;
 }
