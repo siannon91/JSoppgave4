@@ -56,7 +56,7 @@ const movies = [
 ];
 
 
-for (let movie of movies) { 
+function createMovieCard(movie) { 
 
     const card = document.createElement("div"); 
     card.classList.add("movie-card"); 
@@ -88,9 +88,13 @@ for (let movie of movies) {
 
     card.append(tittel, movieImage, movieSjanger, movieÅr, movieLengde, movieSpråk);
 
-    movieContainer.append(card);
+    return card;
 }
 
+for (let movie of movies) { 
+    const card = createMovieCard(movie);
+    movieContainer.append(card);
+}
 
 
 function getRandomMovie() {
