@@ -94,6 +94,20 @@ function createMovieCard(movie, isDetailed = true) {
     movieSpråk.textContent = movie.Språk; 
     movieSpråk.classList.add("movie-språk");
 
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Slett";
+    deleteButton.classList.add("delete-button");
+
+    deleteButton.addEventListener("click", () => {
+        card.remove();
+        for (let i = 0; i < movies.length; i++) {
+        if (movies[i].Tittel === movie.Tittel) {
+            movies.splice(i, 1);
+            break;
+        }
+      }
+    });
+
     card.append(tittel, movieImage, movieSjanger, movieÅr, movieLengde, movieSpråk);
 
     return card;
